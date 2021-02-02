@@ -1,0 +1,150 @@
+.middle-content{
+    background-color: #ffffff;
+    width: 300px;
+    height: 500px;
+    border: 15px solid #502f86;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    margin: 40px;
+    margin-top: 40px;
+	border-radius: 25px;
+
+}
+body{
+	background-color: #6f42c1 !important;
+	font-family: Nunito;
+};
+.blink{
+	background-color: #1c87c9;
+	-webkit-border-radius: 60px;
+	border-radius: 60px;
+	border: none;
+	color: #eeeeee;
+	cursor: pointer;
+	display: inline-block;
+	font-family: sans-serif;
+	font-size: 20px;
+	padding: 10px 10px;
+	text-align: center;
+	text-decoration: none;
+}
+	
+@keyframes glowing {
+0% {
+	background-color: #502f86;
+	box-shadow: 0 0 5px #502f86;
+}
+50% {
+	background-color: #8262b8;
+	box-shadow: 0 0 20px #8262b8;
+}
+100% {
+	background-color: #502f86;
+	box-shadow: 0 0 5px #502f86;
+	}
+}
+.blink {
+	animation: glowing 1300ms infinite;
+}
+
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background-color: #fff;
+}
+.preloader .loading {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	font: 14px arial;
+}
+
+#form-player {
+	left: 50%;
+    top: 50%;
+    width: 230px;
+    margin-top: -69px;
+    margin-left: -115px;
+    position: absolute;
+}
+
+.form-input{
+	margin:10px;
+}
+
+.btn-stickearn{
+	background-color: #502f86	;
+	-webkit-border-radius: 60px;
+	border-radius: 60px;
+	border: none;
+	color: #eeeeee;
+	cursor: pointer;
+	display: inline-block;
+	font-family: sans-serif;
+	font-size: 20px;
+	padding: 10px 10px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.gameArea {
+	height: 300px;
+	border: 15px solid #fad97c;
+	padding: 8px;
+	margin: 20px;
+	background-color: #f9b800;
+	border-radius: 27px;
+}
+
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 276px;
+}
+
+.dashboard-admin {
+    background-color: aliceblue;
+    top: -55px;
+    width: 160px;
+    bottom: 9px;
+    padding: 9px;
+}
