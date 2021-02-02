@@ -148,3 +148,11 @@ ul.timeline > li:before {
     bottom: 9px;
     padding: 9px;
 }
+
+@media only screen and (max-width:500px) {
+	/* For mobile phones: */
+	.logo {
+	  width: 80%;
+	  height: 80%;
+	}
+  }
