@@ -8,14 +8,15 @@
     </h3>
     <div id="form-player" class="form-player">
         <h5 style="text-align:center;padding-bottom: 27px;">GUESS THE WORD:
-            <span id="scramble-word">(KATA)</span>
+            <span id="scramble-word"></span>
         </h5>
         <center>
             {{ Form::open(array('url' => 'player/create', 'id' => 'form-playground', 'autocomplete'=>'off')) }}
+            <span id="counter">1</span>
+            /10
             {{ Form::text('guess_word', '', ['required']) }}
 
             {{ Form::submit('GUESS', ['id' => 'guess', 'class' => 'btn btn-stickearn', 'style' => 'margin:29px']) }}
-
             {{ Form::close() }}
         </center>
     </div>
