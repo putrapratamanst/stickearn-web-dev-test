@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\ScramblerController;
+use App\Http\Controllers\ScoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,10 @@ $router->group(['prefix' => 'player'], function () use ($router) {
     $router->get('form', [PlayerController::class, 'form']);
     $router->post('create', [PlayerController::class, 'create']);
 });
+
+$router->group(['prefix' => 'scrambler'], function () use ($router) {
+    $router->get('playground', [ScramblerController::class, 'playground']);
+    $router->post('create', [ScramblerController::class, 'create']);
+});
+
+$router->get('/score/get', [ScoreController::class, 'getScore']);
