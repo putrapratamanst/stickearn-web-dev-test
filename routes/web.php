@@ -25,7 +25,8 @@ $router->group(['prefix' => 'player'], function () use ($router) {
 
 $router->group(['prefix' => 'scrambler'], function () use ($router) {
     $router->get('playground', [ScramblerController::class, 'playground']);
-    $router->post('create', [ScramblerController::class, 'create']);
+    $router->get('generate', [ScramblerController::class, 'generate']);
+    $router->post('check', [ScramblerController::class, 'check']);
 });
 
 $router->get('/score/get', [ScoreController::class, 'getScore']);
