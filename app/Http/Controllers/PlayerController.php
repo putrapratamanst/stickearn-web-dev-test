@@ -34,7 +34,7 @@ class PlayerController extends Controller
         if ($dataPlayer) {
             $checkPlayer = $this->detailByUsernameAndPassword($request->username, $request->password);
             if (!$checkPlayer) {
-                return view('/player/form')->withErrors(['', 'Data Player Not Found ']);
+                return view('/player/form')->withErrors(['', 'Password is wrong ']);
             }
         } else {
             $dataPlayer = $this->createPlayer($request);
