@@ -25,7 +25,6 @@ $(document).ready(function () {
     }
 
     function score() {
-        $('.preloader').show();
 
         $.ajax({
             url: "/score/get",
