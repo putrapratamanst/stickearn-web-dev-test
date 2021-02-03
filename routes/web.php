@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\PlayerController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
+$router->get('/', function () {
     return view('welcome');
 });
 
-Route::get('/player/form', [PlayerController::class, 'form']);
+$router->group(['prefix' => 'player'], function () use ($router) {
+    $router->get('form', [PlayerController::class, 'form']);
+    $router->post('create', [PlayerController::class, 'create']);
+});
