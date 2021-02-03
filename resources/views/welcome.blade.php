@@ -11,7 +11,7 @@
 <h5 style="text-align: center;">(Word Scrambler)</h5>
 <p style="text-align: center;">
     <img class="logo" src="{{ asset('assets/images/logo.jpg') }}" width="350" height="350">
-    <span style=" font-family: 'Nunito Sans' ;font-size: 22px;"> Click <a href="/player/form" class="btn btn-dark blink">PLAY</a> To Start the Game</span>  
+    <span style=" font-family: 'Nunito Sans' ;font-size: 22px;">  <a href="/player/form" class="btn btn-dark blink">PLAY</a> To Start the Game</span>  
 </p>
 <div class="dashboard-admin">
     <a href="/home">
