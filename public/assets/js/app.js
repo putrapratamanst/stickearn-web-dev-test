@@ -1,8 +1,3 @@
-$(document).ready(function () {
-    $(".preloader").fadeOut(6500);
-})
-
-
 var original = "";
 var scramble = "";
 $(document).ready(function () {
@@ -12,7 +7,6 @@ $(document).ready(function () {
         $('.form-player').removeClass('d-none');
         document.getElementById("form-playground").reset();
         generate()
-
     });
 
 
@@ -26,8 +20,6 @@ $(document).ready(function () {
                 original = responseGenerate.original_word;
                 scramble = responseGenerate.scramble_word;
                 $('span#scramble-word').text("(" + responseGenerate.scramble_word + ")");
-                $('.preloader').hide();
-
             }
         })
     }
@@ -40,7 +32,6 @@ $(document).ready(function () {
             method: "get",
             success: function (responseScore) {
                 $('span#score').text(responseScore);
-                $('.preloader').hide();
             }
         })
     }
@@ -58,7 +49,6 @@ $(document).ready(function () {
             }
         });
 
-        $('.preloader').show();
 
         /* Submit form data using ajax*/
         $.ajax({
@@ -77,7 +67,6 @@ $(document).ready(function () {
                 $('span#res_message').text(response.message);
                 $('.form-guess').removeClass('d-none');
                 $('.form-player').addClass('d-none');
-                $('.preloader').hide();
 
                 // document.getElementById("form-playground").reset();
                 // setTimeout(function () {
