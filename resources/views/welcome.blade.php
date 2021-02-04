@@ -7,7 +7,7 @@
     </div>
 </div> -->
 
-<h3 style="text-align: center;">Stickearn Web Developer Test </h3>
+<h3 style="text-align: center;">StickEarn Web Developer Test </h3>
 <h5 style="text-align: center;">(Word Scrambler)</h5>
 <p style="text-align: center;">
     <img class="logo" src="{{ asset('assets/images/logo.jpg') }}" width="350" height="350">
