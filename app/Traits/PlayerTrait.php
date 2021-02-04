@@ -49,4 +49,10 @@ trait PlayerTrait
         $model->save();
         return $model;
     }
+
+    public function getListPlayer()
+    {
+        $repo = new PlayerRepository();
+        return $repo->listPlayer();
+    }
 }
