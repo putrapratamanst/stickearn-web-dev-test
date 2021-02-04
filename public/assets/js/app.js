@@ -11,14 +11,14 @@ $(document).ready(function () {
 
         $.ajax({
             url: "/score/delete",
-            method: "delete",
+            method: "get",
             success: function (responseScore) {
             }
         })
     }
 
     $("#next").click(function () {
-        if (counter == 3) {
+        if (counter == 10) {
             location.replace("/result/history/")
         } else {
             $('.form-guess').addClass('d-none');
@@ -58,10 +58,13 @@ $(document).ready(function () {
     }
     if (window.location.href.indexOf("playground") > -1) {
         generate();
-        deleteScore()
+        // deleteScore()
         score();
     }
-
+    if (window.location.href.indexOf("history") > -1) {
+        score();
+    }
+    
     $('#guess').click(function (e) {
         e.preventDefault();
         /*Ajax Request Header setup*/
