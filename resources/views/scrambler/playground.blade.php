@@ -1,10 +1,15 @@
 @extends('layouts.main')
 @section('content')
+<div class="preloader" style="display: none;">
+    <div class="loading">
+        <img src="{{ asset('assets/images/logo.gif') }}">
+    </div>
+</div>
 
 @include('layouts.navbar')
 <div class="gameArea">
     <h3 style="color:navy">
-        SCORE:<span id="score">0</span>
+        SCORE: <span id="score"></span>
     </h3>
     <div id="form-player" class="form-player">
         <h5 style="text-align:center;padding-bottom: 27px;">GUESS THE WORD:
@@ -13,7 +18,7 @@
         <center>
             {{ Form::open(array('url' => 'player/create', 'id' => 'form-playground', 'autocomplete'=>'off')) }}
             <span id="counter">1</span>
-            /10
+            / 10
             {{ Form::text('guess_word', '', ['required']) }}
 
             {{ Form::submit('GUESS', ['id' => 'guess', 'class' => 'btn btn-stickearn', 'style' => 'margin:29px']) }}

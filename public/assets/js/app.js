@@ -1,17 +1,36 @@
 var original = "";
 var scramble = "";
+var counter = 1;
 $(document).ready(function () {
+    function deleteScore() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            url: "/score/delete",
+            method: "delete",
+            success: function (responseScore) {
+            }
+        })
+    }
 
     $("#next").click(function () {
-        $('.form-guess').addClass('d-none');
-        $('.form-player').removeClass('d-none');
-        document.getElementById("form-playground").reset();
-        generate()
+        if (counter == 3) {
+            location.replace("/result/history/")
+        } else {
+            $('.form-guess').addClass('d-none');
+            $('.form-player').removeClass('d-none');
+            document.getElementById("form-playground").reset();
+            generate()
+        }
     });
 
 
     function generate() {
-        $('.preloader').show(300)
+        // $('.preloader').show(300)
 
         $.ajax({
             url: "/scrambler/generate",
@@ -20,11 +39,14 @@ $(document).ready(function () {
                 original = responseGenerate.original_word;
                 scramble = responseGenerate.scramble_word;
                 $('span#scramble-word').text("(" + responseGenerate.scramble_word + ")");
+                $('.preloader').hide();
             }
         })
     }
 
+
     function score() {
+        // $('.preloader').show(300)
 
         $.ajax({
             url: "/score/get",
@@ -36,6 +58,7 @@ $(document).ready(function () {
     }
     if (window.location.href.indexOf("playground") > -1) {
         generate();
+        deleteScore()
         score();
     }
 
@@ -56,17 +79,17 @@ $(document).ready(function () {
             data: {
                 original_word: original,
                 scramble_word: scramble,
-                form : $('#form-playground').serialize(),
+                form: $('#form-playground').serialize(),
             },
 
             success: function (response) {
                 //------------------------
                 score();
+                $('#counter').text(counter += 1);
                 $('#res_message').show();
                 $('span#res_message').text(response.message);
                 $('.form-guess').removeClass('d-none');
                 $('.form-player').addClass('d-none');
-
                 // document.getElementById("form-playground").reset();
                 // setTimeout(function () {
                 //     $('#form-guess').hide();
