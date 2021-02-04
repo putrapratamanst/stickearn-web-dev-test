@@ -3,7 +3,6 @@
 @section('content')
 
 
-{{ Form::open(array('url' => 'player/create', 'autocomplete'=>'off')) }}
 
 <center>
     <h2>Login/Register Game Player</h2>
@@ -22,14 +21,14 @@
 
 <div id="form-player">
     <center>
+    {{ Form::open(array('url' => 'player/create', 'autocomplete'=>'off')) }}
         {{ Form::text('username', '', ['required',  'placeholder' => 'Please Input Username', 'minlength' => 5, 'class' => 'form-input']) }}
         {{ Form::password('password', ['required',  'placeholder' => 'Please Input Password', 'minlength' => 5, 'class' => 'form-input']) }}
 
         {{ Form::submit('Submit', ['class' => 'btn btn-stickearn', 'style' => 'margin:10px']) }}
+        {{ Form::close() }}
     </center>
+
 </div>
-
-
-{{ Form::close() }}
 
 @endsection
