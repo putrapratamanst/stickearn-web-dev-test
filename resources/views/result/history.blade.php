@@ -3,9 +3,9 @@
 @include('layouts.navbar')
 
 <h4 style="text-align:center">  History Game</h4>
-<h6 style="text-align:center">Score: <span id="score"></span></h6>
+{{-- <h6 style="text-align:center">Score: <span id="score"></span></h6> --}}
 <hr>
-<div class="container mb-5" style=" overflow-y: scroll;">
+<div class="container mb-6" style=" overflow-y: scroll;">
     <div class="row">
         <div class="col-md-6 offset-md-2">
             <ul class="timeline">
