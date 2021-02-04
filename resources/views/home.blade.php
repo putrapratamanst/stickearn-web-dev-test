@@ -3,8 +3,10 @@
 
 
 <div class="container" style=" overflow-y: scroll;">
-    <div class="card-header">{{ __('Dashboard Admin') }}</div>
-    @include('admin.navbar-admin')
+    <div class="card-header">
+        <a href="/home" style="color:black">Dashboard Admin</a>
+        <a href="/logout" class="float-right" onclick="return confirm('Are you sure to logout ?')">Logout</a>
+    </div>
     <hr>
     <br>
     <div class="row">
