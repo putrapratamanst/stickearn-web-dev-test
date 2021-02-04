@@ -58,7 +58,7 @@ $(document).ready(function () {
     }
     if (window.location.href.indexOf("playground") > -1) {
         generate();
-        // deleteScore()
+        deleteScore()
         score();
     }
     if (window.location.href.indexOf("history") > -1) {
