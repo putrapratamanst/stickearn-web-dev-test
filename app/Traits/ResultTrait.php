@@ -25,4 +25,11 @@ trait ResultTrait
 
         $model->save();
     }
+
+    public function listData($playerId)
+    {
+        $repo = new ResultRepository();
+        $repo->setPlayerId($playerId);
+        return $repo->list();
+    }
 }

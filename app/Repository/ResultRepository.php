@@ -26,9 +26,9 @@ class ResultRepository
             ->first();
     }
 
-    public static function list($idPlayer)
+    public function list()
     {
-        return Result::where('player_id', $idPlayer)
+        return Result::where('player_id', $this->playerId)
             ->orderByDesc('id')
             ->get();
     }
