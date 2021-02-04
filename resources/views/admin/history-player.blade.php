@@ -8,7 +8,7 @@
 <br>
 <h4 style="text-align:center">History Game - {{ $name }}</h4>
 <hr>
-<div class="container mb-5" style=" overflow-y: scroll;">
+<div class="container mb-6" style=" overflow-y: scroll;">
     <div class="row">
         <div class="col-md-6 offset-md-2">
 

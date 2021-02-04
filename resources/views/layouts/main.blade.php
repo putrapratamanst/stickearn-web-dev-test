@@ -1,8 +1,9 @@
 @include('layouts.header')
 
-<body><div class="container">
+<body>
+    <div class="container">
     <div class="row">
-        <div class="col-md-8 middle-content">
+        <div class="col-md-12 middle-content">
             <!-- /.content -->
             @yield('content')
             <!-- /.content -->
