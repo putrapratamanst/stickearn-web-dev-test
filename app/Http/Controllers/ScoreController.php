@@ -14,8 +14,13 @@ class ScoreController extends Controller
         $getScore  = $this->scoreByPlayer($request->session()->get('player_id'));
         $score = 0;
         if($getScore) {
-            $score = $score['score'];
+            $score = $getScore['score'] == 0 ? 0 : $getScore['score'].'00';
         }
         return response()->json($score, 200);
+    }
+
+    public function delete(Request $request)
+    {
+        $this->deleteScore($request->session()->get('player_id'));
     }
 }
