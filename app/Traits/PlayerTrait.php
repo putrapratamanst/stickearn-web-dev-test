@@ -24,6 +24,14 @@ trait PlayerTrait
         return $this->repo->detailPlayerByUsername();
     }
 
+
+    public function detailById($playerId)
+    {
+        $this->repo->setPlayerId($playerId);
+
+        return $this->repo->detailPlayerById();
+    }
+
     public function detailByUsernameAndPassword($userName, $password)
     {
         $this->repo->setUsername($userName);

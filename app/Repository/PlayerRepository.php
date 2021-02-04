@@ -7,11 +7,17 @@ use App\Models\Player;
 class PlayerRepository
 {
     protected $username;
+    protected $playerId;
     protected $password;
 
     public function setUsername($username)
     {
         $this->username = $username;
+    }
+
+    public function setPlayerId($playerId)
+    {
+        $this->playerId = $playerId;
     }
 
     public function setPassword($password)
@@ -29,6 +35,12 @@ class PlayerRepository
     public function detailPlayerByUsername()
     {
         return Player::where('username', $this->username)
+            ->first();
+    }
+
+    public function detailPlayerById()
+    {
+        return Player::where('id', $this->playerId)
             ->first();
     }
 
