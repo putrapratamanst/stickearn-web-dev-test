@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\PlayerTrait;
 use Illuminate\Http\Request;
 use App\Traits\ResultTrait;
 
 class ResultController extends Controller
 {
-    use ResultTrait;
+    use ResultTrait, PlayerTrait;
 
     public function history(Request $request)
     {
@@ -21,9 +22,10 @@ class ResultController extends Controller
     public function historyInAdmin($playerId)
     {
         $getScore  = $this->listData($playerId);
-
+        $playerName = $this->detailById($playerId);
         return view('/admin/history-player', [
-            'scores' => $getScore
+            'scores' => $getScore,
+            'name' => $playerName['username']
         ]);
     }
 }

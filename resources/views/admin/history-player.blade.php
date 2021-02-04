@@ -1,13 +1,14 @@
 @extends('layouts.main')
 @section('content')
 
-<div class="card-header">{{ __('Dashboard Admin') }}</div>
-@include('admin.navbar-admin')
-
-<h4 style="text-align:center">History Game</h4>
+<div class="card-header">
+    <a href="/home" style="color:black">Dashboard Admin</a>
+    <a href="/logout" class="float-right" onclick="return confirm('Are you sure to logout ?')">Logout</a>
+</div>
+<br>
+<h4 style="text-align:center">History Game - {{ $name }}</h4>
 <hr>
 <div class="container mb-5" style=" overflow-y: scroll;">
-    <a href="/home">BACK</a>
     <div class="row">
         <div class="col-md-6 offset-md-2">
 
