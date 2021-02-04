@@ -1,16 +1,9 @@
 @extends('layouts.main')
 @section('content')
-
-
-<div class="preloader" style="display: none;">
-    <div class="loading">
-        <img src="{{ asset('assets/images/logo.gif') }}">
-    </div>
-</div>
 @include('layouts.navbar')
 
-<h4 style="text-align:center">History Game</h4>
-<h6 style="text-align:center">Score: 200</h6>
+<h4 style="text-align:center">  History Game</h4>
+<h6 style="text-align:center">Score: <span id="score"></span></h6>
 <hr>
 <div class="container mb-5" style=" overflow-y: scroll;">
     <div class="row">

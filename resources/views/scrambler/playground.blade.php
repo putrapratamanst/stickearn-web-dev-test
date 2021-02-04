@@ -1,16 +1,13 @@
 @extends('layouts.main')
 @section('content')
-<div class="preloader" style="display: none;">
-    <div class="loading">
-        <img src="{{ asset('assets/images/logo.gif') }}">
-    </div>
-</div>
+
 
 @include('layouts.navbar')
 <div class="gameArea">
-    <h3 style="color:navy">
+    <h5 style="color:navy">
         SCORE: <span id="score"></span>
-    </h3>
+    </h5>
+    
     <div id="form-player" class="form-player">
         <h5 style="text-align:center;padding-bottom: 27px;">GUESS THE WORD:
             <span id="scramble-word"></span>
